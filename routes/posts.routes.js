@@ -7,7 +7,7 @@ postRouter.get("/", async (req, res) => {
         const {userId}=req.body
         const {device=["Tablet","Laptop","Mobile"]}=req.query
         const posts= await PostModel.find({$and:[{userId},{device:{$in:device}}]})
-        res.send({posts,msg:"Your posts"})
+        res.send({posts,msg:"Your posts is getting "})
     } catch (error) {
         res.send(error.message)
     }
